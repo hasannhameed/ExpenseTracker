@@ -11,10 +11,16 @@ const ExpenseForm = () => {
 
 
     const titleChangeHandler = (event) => {
-
-       console.log(event.target.value);
-
+        setTitle(event.target.value);
     }
+    const amountChangeHandler = (event) => {
+        setAmount(event.target.value);
+    }
+    const dateChangeHandler = (event) => {
+        setDate(event.target.value);
+    }
+    
+   
     return (
         <form >
 
@@ -25,11 +31,11 @@ const ExpenseForm = () => {
                     </div>
                     <div className='new-expense__control'>
                     <label htmlFor=""> Amount:</label>
-                    <input value={amount} type="number" placeholder='Amount' onChange={(event) => { setAmount(event.target.value) }} />
+                    <input value={amount} type="number" placeholder='Amount' onChange={amountChangeHandler} />
                     </div>
                     <div className='new-expense__control'>
                     <label htmlFor=""> Date :</label>
-                    <input value={date} type="date" placeholder='Date' onChange={((event) => { setDate(event.target.value) })} />
+                    <input value={date} type="date" placeholder='Date' onChange={dateChangeHandler} />
                     </div>
                     <div className="new-Expense__action">
                     <button type='submit'>Add Expenses</button>
