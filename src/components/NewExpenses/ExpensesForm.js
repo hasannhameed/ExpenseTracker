@@ -26,6 +26,7 @@ const ExpenseForm = () => {
         event.preventDefault();
         console.log(userInput);
     }
+    console.log(userInput);
    
     
    
