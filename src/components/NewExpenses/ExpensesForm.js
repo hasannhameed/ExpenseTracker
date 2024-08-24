@@ -1,32 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ExpenseForm.css'
 
 
 
 const ExpenseForm = () => {
 
-    const [userInput, setUserInput] = useState({
-        enteredTitle:'',
-        enteredAmount:'',
-        enteredDate:''
-    });
-
-
-    const inputHandler=(event)=>{
-        const {name, value} = event.target;
-        setUserInput((prevState)=>{
-            return{
-                ...prevState,
-                [name] : value
-            }
-        })
-    }
+   
 
     const handleForm = (event)=>{
         event.preventDefault();
-        console.log(userInput);
+       
+        const formData= new FormData(event.target);
+        const obj = Object.fromEntries(formData.entries()) 
+        //The entries() method is used in JavaScript to return an iterator object that contains the key/value pairs of a given array.
+        console.log(obj)
     }
-    console.log(userInput);
+   
    
     
    
@@ -36,15 +25,15 @@ const ExpenseForm = () => {
             <div className="new-expense__controls">
                 <div className='new-expense__control'>
                     <label htmlFor="">Title</label>
-                     <input name='enteredTitle' value={ userInput.enteredTitle}  type="text" placeholder='Title' onChange={inputHandler} />
+                     <input name='enteredTitle'  type="text" placeholder='Title' />
                     </div>
                     <div className='new-expense__control'>
                     <label  htmlFor=""> Amount:</label>
-                    <input  name='enteredAmount' value={ userInput.enteredAmount} type="number" placeholder='Amount'  onChange={inputHandler} />
+                    <input  name='enteredAmount'  type="number" placeholder='Amount'  />
                     </div>
                     <div className='new-expense__control'>
                     <label htmlFor=""> Date :</label>
-                    <input  name='enteredDate' value={ userInput.enteredDate} type="date"  placeholder='Date'  onChange={inputHandler} />
+                    <input  name='enteredDate' type="date"  placeholder='Date' />
                     </div>
                     <div className="new-Expense__action">
                     <button type='submit'>Add Expenses</button>
