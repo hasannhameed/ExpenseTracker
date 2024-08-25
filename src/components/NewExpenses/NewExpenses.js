@@ -4,16 +4,11 @@ import './NewExpenses.css'
 
 const NewExpenses = (props) =>{
 
-    const saveExpensedata=(enteredExpenseDate)=>{
-        const expenseData={
-            ...enteredExpenseDate
-        }
-        props.saveExpensedata(expenseData)
-    }
+  
    
     return (
        <div className='new-expense'> 
-        <ExpenseForm saveExpensedata={saveExpensedata}/>
+        <ExpenseForm saveExpensedata={props.saveExpensedata}/>
        </div>
     )
 }
