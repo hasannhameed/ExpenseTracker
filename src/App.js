@@ -26,17 +26,19 @@ const App = () => {
     },
   ];
 
-  // return React.createElement(
-  //   'div',
-  //   {},
-  //   React.createElement('h2', {}, "Let's get started!"),
-  //   React.createElement(Expenses, { items: expenses })
-  // );
+  const saveExpensedata =(enteredExpenseData) =>{
+    const userInput ={
+      ...enteredExpenseData
+    }
+    console.log(userInput);
+  }
+
+  
 
   return (
     <div>
       <h2>Let's get started!</h2>
-      <NewExpenses/>
+      <NewExpenses saveExpensedata={saveExpensedata}/>
       <Expenses items={expenses} />
     </div>
   );
