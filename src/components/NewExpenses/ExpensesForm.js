@@ -32,30 +32,50 @@ const ExpenseForm = (props) => {
         setTitle('');
         setAmount('');
         setDate('');
-        props.saveExpensedata(userInput);
+        props.onSaveExpensedata(userInput);
     }
    
-   
-    
    
     return (
         <form  onSubmit={handleForm}>
 
             <div className="new-expense__controls">
-                <div className='new-expense__control'>
-                    <label htmlFor="">Title</label>
-                     <input name='enteredTitle' value={title}  type="text" placeholder='Title' onChange={titleChangeHandler} />
+
+                   <div className='new-expense__control'>
+                        <label htmlFor="">Title</label>
+                        <input 
+                        name='enteredTitle' 
+                        value={title}  
+                        type="text" 
+                        placeholder='Title' 
+                        onChange={titleChangeHandler} 
+                        />
                     </div>
+
                     <div className='new-expense__control'>
-                    <label  htmlFor=""> Amount:</label>
-                    <input  name='enteredAmount' value={ amount} type="number" placeholder='Amount'  onChange={amountChangeHandler} />
+                        <label  htmlFor=""> Amount:</label>
+                        <input  
+                        name='enteredAmount' 
+                        value={ amount} 
+                        type="number" 
+                        placeholder='Amount'  
+                        onChange={amountChangeHandler} 
+                        />
                     </div>
+
                     <div className='new-expense__control'>
-                    <label htmlFor=""> Date :</label>
-                    <input  name='enteredDate' value={date} type="date"  placeholder='Date'  onChange={dateChangeHandler} />
+                        <label htmlFor=""> Date :</label>
+                        <input  
+                        name='enteredDate' 
+                        value={date} 
+                        type="date"  
+                        placeholder='Date'  
+                        onChange={dateChangeHandler} 
+                        />
                     </div>
+
                     <div className="new-Expense__action">
-                    <button type='submit'>Add Expenses</button>
+                        <button type='submit'>Add Expenses</button>
                     </div>
             </div>
         </form>
