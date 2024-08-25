@@ -26,7 +26,7 @@ const ExpenseForm = (props) => {
         const userInput={
             title,
             amount,
-            date:new Date(),
+            date:new Date(date),
             id:Math.random().toString(),
         }    
         setTitle('');
