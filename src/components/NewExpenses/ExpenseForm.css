@@ -1,5 +1,7 @@
 .new-expense__controls {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1rem;
@@ -22,5 +24,8 @@
   }
   
   .new-expense__actions {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-end;    
+    text-align: right;        
   }

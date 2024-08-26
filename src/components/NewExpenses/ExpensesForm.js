@@ -26,8 +26,8 @@ const ExpenseForm = (props) => {
         event.preventDefault();
        setToggleButton(!toggleButton)
         const userInput={
-            title,
-            amount,
+            title:title,
+            amount:+amount,
             date:new Date(date),
             id:Math.random().toString(),
         }    
@@ -77,11 +77,11 @@ const ExpenseForm = (props) => {
                         />
                     </div>
 
-                    <div className="new-Expense__action">
+                    <div className="new-expense__actions">
                         <button type='click' onClick={()=>{setToggleButton(!toggleButton)}}>Cancel</button>
                     </div>
 
-                    <div className="new-Expense__action">
+                    <div className="new-expense__actions">
                         <button type='submit'>Add Expenses</button>
                     </div>
             </div>
