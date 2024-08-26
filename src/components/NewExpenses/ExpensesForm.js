@@ -5,6 +5,7 @@ import './ExpenseForm.css'
 
 const ExpenseForm = (props) => {
 
+    const [toggleButton, setToggleButton] = useState(false);
     const [title, setTitle] = useState('');
     const [amount, setAmount] = useState('');
     const [date, setDate] = useState('');
@@ -23,6 +24,7 @@ const ExpenseForm = (props) => {
 
     const handleForm = (event)=>{
         event.preventDefault();
+       setToggleButton(!toggleButton)
         const userInput={
             title,
             amount,
@@ -37,7 +39,8 @@ const ExpenseForm = (props) => {
    
    
     return (
-        <form  onSubmit={handleForm}>
+        <>
+        {toggleButton && (<form  onSubmit={handleForm}>
 
             <div className="new-expense__controls">
 
@@ -75,10 +78,18 @@ const ExpenseForm = (props) => {
                     </div>
 
                     <div className="new-Expense__action">
+                        <button type='click' onClick={()=>{setToggleButton(!toggleButton)}}>Cancel</button>
+                    </div>
+
+                    <div className="new-Expense__action">
                         <button type='submit'>Add Expenses</button>
                     </div>
             </div>
-        </form>
+        </form>)}
+        {!toggleButton &&  <button type='click' onClick={()=>{setToggleButton(!toggleButton)}}>Add Expenses</button>}
+       
+        </>
+        
     )
 
 }
